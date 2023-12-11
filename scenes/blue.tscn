@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ptagre73sbhl"]
+[gd_scene load_steps=2 format=3 uid="uid://b53mf4fcko1gx"]
+
+[ext_resource type="Script" path="res://scripts/go_back_button.gd" id="1_iymfn"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_iymfn")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = -21.0
@@ -13,4 +16,16 @@ scale = Vector2(5.77586, 3.4904)
 
 [node name="ColorRect" type="ColorRect" parent="PanelContainer"]
 layout_mode = 2
-color = Color(0.313726, 0.415686, 0.972549, 1)
+color = Color(0.309804, 0.419608, 0.964706, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Go back"
+
+[connection signal="button_down" from="PanelContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_button_down"]

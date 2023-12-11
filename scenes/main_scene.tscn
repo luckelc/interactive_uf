@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://scripts/shelf.gd" id="5_dkefg"]
 [ext_resource type="Shader" path="res://shader/hint.gdshader" id="5_lipgg"]
 [ext_resource type="PackedScene" uid="uid://c06vyxesmopho" path="res://scenes/red.tscn" id="7_4jsmi"]
-[ext_resource type="PackedScene" uid="uid://ptagre73sbhl" path="res://scenes/blue.tscn" id="8_l7lag"]
-[ext_resource type="PackedScene" uid="uid://plt76qfcjon" path="res://scenes/yellow.tscn" id="9_7ep4a"]
+[ext_resource type="PackedScene" uid="uid://b53mf4fcko1gx" path="res://scenes/blue.tscn" id="8_l7lag"]
+[ext_resource type="PackedScene" uid="uid://6bj7fe3er358" path="res://scenes/yellow.tscn" id="9_7ep4a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_couus"]
 texture = ExtResource("3_cfhb4")
@@ -122,8 +122,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-398, -201, 459, -201, 468, 275, -111, 272, -115, -13, 76, -7, 80, 82, -17, 85, -18, 176, 175, 179, 174, -107, -209, -107, -207, 273, -398, 275)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q6om"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wnjj8"]
 shader = ExtResource("5_lipgg")
 shader_parameter/speed = 0.35
@@ -141,6 +139,8 @@ height = 1
 [sub_resource type="CanvasTexture" id="CanvasTexture_sg7ob"]
 diffuse_texture = SubResource("GradientTexture2D_801ex")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q6om"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -157,19 +157,6 @@ layer_1/tile_data = PackedInt32Array(65546, 262144, 4, 327690, 458752, 3, 196610
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(593, 298)
 navigation_polygon = SubResource("NavigationPolygon_r688l")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(291, 482)
-script = ExtResource("1_vr1md")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_picrs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_8q6om")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
-path_postprocessing = 1
 
 [node name="StoreManager" type="Node2D" parent="."]
 script = ExtResource("4_ku0bl")
@@ -197,5 +184,18 @@ scale = Vector2(93.2498, 79.75)
 texture = SubResource("CanvasTexture_sg7ob")
 script = ExtResource("5_dkefg")
 nextScene = ExtResource("9_7ep4a")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(291, 482)
+script = ExtResource("1_vr1md")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_picrs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_8q6om")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+path_postprocessing = 1
 
 [connection signal="child_mouse_entered" from="StoreManager" to="StoreManager" method="_on_child_mouse_entered"]
