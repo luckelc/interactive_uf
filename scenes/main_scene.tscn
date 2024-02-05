@@ -176,6 +176,7 @@ scale = Vector2(93.2498, 79.75)
 texture = SubResource("CanvasTexture_sg7ob")
 script = ExtResource("5_dkefg")
 nextScene = ExtResource("8_l7lag")
+unique_id = 1
 
 [node name="Pot" type="Sprite2D" parent="StoreManager"]
 material = SubResource("ShaderMaterial_wnjj8")
@@ -184,6 +185,7 @@ scale = Vector2(93.2498, 79.75)
 texture = SubResource("CanvasTexture_sg7ob")
 script = ExtResource("5_dkefg")
 nextScene = ExtResource("9_7ep4a")
+unique_id = 2
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(291, 482)
