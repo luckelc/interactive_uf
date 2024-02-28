@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://smds7o3kyvjq"]
+[gd_scene load_steps=9 format=3 uid="uid://smds7o3kyvjq"]
 
 [ext_resource type="Script" path="res://scripts/go_back_button.gd" id="1_f75qb"]
 [ext_resource type="Script" path="res://scripts/productManager.gd" id="2_1o46a"]
+[ext_resource type="Texture2D" uid="uid://d1pehusfl1yxo" path="res://sprites/simon_/Bookshelves-Empty.svg" id="2_xd2wd"]
 [ext_resource type="Script" path="res://product.gd" id="3_2x2ps"]
-[ext_resource type="Texture2D" uid="uid://tf8iuc3cdjhf" path="res://sprites/simon_/3.-NAYAHOSE-Wooden-Kitchen-Utensil-Set-1004510123.jpg" id="4_rml7x"]
-[ext_resource type="Texture2D" uid="uid://cilr3muvjp0ol" path="res://sprites/simon_/753880-2975065607.jpg" id="5_cydgm"]
+[ext_resource type="Texture2D" uid="uid://tf8iuc3cdjhf" path="res://sprites/simon_/3.-NAYAHOSE-Wooden-Kitchen-Utensil-Set-1004510123.png" id="5_jw13x"]
+[ext_resource type="Texture2D" uid="uid://cilr3muvjp0ol" path="res://sprites/simon_/753880-2975065607.png" id="6_fyskn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvmrr"]
-size = Vector2(337.143, 467.143)
+size = Vector2(677.143, 525)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byn3y"]
-size = Vector2(585.714, 445.714)
+size = Vector2(548.571, 445.714)
 
 [node name="Camera2D" type="Camera2D"]
 position = Vector2(-99, 6)
@@ -32,38 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.572549, 0.262745, 0.12549, 1)
-
-[node name="Shelf" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 164.0
-offset_bottom = 189.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
-
-[node name="Shelf2" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 381.0
-offset_right = 1.0
-offset_bottom = 406.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
-
-[node name="Shelf3" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 536.0
-offset_right = 1.0
-offset_bottom = 561.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
+color = Color(0.278431, 0.282353, 0.25098, 1)
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 2
@@ -124,6 +94,11 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/ColorRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
+[node name="Bookshelves-empty" type="Sprite2D" parent="."]
+position = Vector2(-19, -34)
+scale = Vector2(1.998, 1.486)
+texture = ExtResource("2_xd2wd")
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(235, -31)
 scale = Vector2(0.35, 0.35)
@@ -137,27 +112,29 @@ script = ExtResource("3_2x2ps")
 isWrong = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(-6.10352e-05, -2.14285)
+position = Vector2(-392.857, -134.643)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qvmrr")
 
 [node name="Capture4" type="Sprite2D" parent="Node2D/Area2D"]
 z_index = 1
-position = Vector2(-134.962, -79.3518)
+position = Vector2(-394.286, -117.143)
 scale = Vector2(0.477092, 0.412293)
-texture = ExtResource("4_rml7x")
+texture = ExtResource("5_jw13x")
 
 [node name="Area2D2" type="Area2D" parent="Node2D"]
 position = Vector2(-1531.43, -8.57143)
 script = ExtResource("3_2x2ps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D2"]
-position = Vector2(21.429, 25.7143)
+position = Vector2(494.287, -88.5714)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_byn3y")
 
 [node name="Capture2" type="Sprite2D" parent="Node2D/Area2D2"]
-position = Vector2(391.43, -60)
-scale = Vector2(0.971429, 0.622857)
-texture = ExtResource("5_cydgm")
+position = Vector2(485.716, -85.7143)
+scale = Vector2(0.517143, 0.454286)
+texture = ExtResource("6_fyskn")
 
 [node name="wrong_answer" type="ColorRect" parent="."]
 visible = false

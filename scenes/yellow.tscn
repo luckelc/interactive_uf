@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://6bj7fe3er358"]
+[gd_scene load_steps=9 format=3 uid="uid://6bj7fe3er358"]
 
 [ext_resource type="Script" path="res://scripts/go_back_button.gd" id="1_13ndo"]
 [ext_resource type="Texture2D" uid="uid://dqntfuiv6rsf8" path="res://sprites/bananas/Capture2.PNG" id="2_71vcs"]
 [ext_resource type="Script" path="res://scripts/productManager.gd" id="2_jtbco"]
+[ext_resource type="Texture2D" uid="uid://d1pehusfl1yxo" path="res://sprites/simon_/Bookshelves-Empty.svg" id="2_k47th"]
 [ext_resource type="Texture2D" uid="uid://c8t0bnu3vmat8" path="res://sprites/bananas/Capture3.PNG" id="3_cygm5"]
 [ext_resource type="Script" path="res://product.gd" id="3_iy118"]
-[ext_resource type="Texture2D" uid="uid://4qvd2f5ylgle" path="res://sprites/bananas/Capture.PNG" id="4_iu16u"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvmrr"]
-size = Vector2(337.143, 467.143)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byn3y"]
 size = Vector2(585.714, 445.714)
@@ -36,38 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.572549, 0.262745, 0.12549, 1)
-
-[node name="Shelf" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 164.0
-offset_bottom = 189.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
-
-[node name="Shelf2" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 381.0
-offset_right = 1.0
-offset_bottom = 406.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
-
-[node name="Shelf3" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 536.0
-offset_right = 1.0
-offset_bottom = 561.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
+color = Color(0.278431, 0.282353, 0.25098, 1)
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 2
@@ -127,38 +93,20 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/ColorRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Need to last 2 months"
+text = "Needs to last 2 weeks"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/ColorRect/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/ColorRect/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Doesn't waste plastics"
+[node name="Bookshelves-empty" type="Sprite2D" parent="."]
+position = Vector2(-19, -34)
+scale = Vector2(1.998, 1.486)
+texture = ExtResource("2_k47th")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(235, -31)
 scale = Vector2(0.35, 0.35)
 script = ExtResource("2_jtbco")
 
-[node name="Area2D" type="Area2D" parent="Node2D"]
-z_index = 2
-position = Vector2(114.286, -5.71428)
-priority = 10
-script = ExtResource("3_iy118")
-isWrong = false
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(-6.10352e-05, -2.14285)
-shape = SubResource("RectangleShape2D_qvmrr")
-
-[node name="Capture4" type="Sprite2D" parent="Node2D/Area2D"]
-z_index = 1
-texture = ExtResource("4_iu16u")
-
 [node name="Area2D2" type="Area2D" parent="Node2D"]
-position = Vector2(-1531.43, -8.57143)
+position = Vector2(-1134.29, -128.571)
 script = ExtResource("3_iy118")
 metadata/_edit_group_ = true
 
@@ -171,7 +119,7 @@ position = Vector2(20, 25.7143)
 texture = ExtResource("2_71vcs")
 
 [node name="Area2D3" type="Area2D" parent="Node2D"]
-position = Vector2(-637.143, -22.8571)
+position = Vector2(-228.571, -105.714)
 script = ExtResource("3_iy118")
 metadata/_edit_group_ = true
 
@@ -218,6 +166,5 @@ scale = Vector2(1.96324, 2.48731)
 text = "Right answer"
 
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]
-[connection signal="input_event" from="Node2D/Area2D" to="Node2D/Area2D" method="_input_per"]
 [connection signal="input_event" from="Node2D/Area2D2" to="Node2D/Area2D2" method="_input_per"]
 [connection signal="input_event" from="Node2D/Area2D3" to="Node2D/Area2D3" method="_input_per"]

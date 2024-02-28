@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://crm7axpqrtb48"]
+[gd_scene load_steps=9 format=3 uid="uid://crm7axpqrtb48"]
 
 [ext_resource type="Script" path="res://scripts/go_back_button.gd" id="1_iymfn"]
 [ext_resource type="Script" path="res://scripts/productManager.gd" id="2_c0ao5"]
+[ext_resource type="Texture2D" uid="uid://d1pehusfl1yxo" path="res://sprites/simon_/Bookshelves-Empty.svg" id="2_vae23"]
 [ext_resource type="Script" path="res://product.gd" id="3_s7cuo"]
 [ext_resource type="Texture2D" uid="uid://coqbmrrg3svpr" path="res://sprites/simon_/Capture.PNG" id="4_1l5tv"]
 [ext_resource type="Texture2D" uid="uid://dilnktkpd11bd" path="res://sprites/simon_/sw.PNG" id="5_ir5jk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvmrr"]
-size = Vector2(337.143, 467.143)
+size = Vector2(182.858, 668.571)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byn3y"]
-size = Vector2(585.714, 445.714)
+size = Vector2(251.429, 762.857)
 
 [node name="Camera2D" type="Camera2D"]
 position = Vector2(-99, 6)
@@ -32,38 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.572549, 0.262745, 0.12549, 1)
-
-[node name="Shelf" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 164.0
-offset_bottom = 189.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
-
-[node name="Shelf2" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 381.0
-offset_right = 1.0
-offset_bottom = 406.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
-
-[node name="Shelf3" type="ColorRect" parent="Control/Background"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 536.0
-offset_right = 1.0
-offset_bottom = 561.0
-grow_horizontal = 2
-color = Color(0.411765, 0.0784314, 0.0313726, 1)
+color = Color(0.278431, 0.282353, 0.25098, 1)
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 2
@@ -104,7 +74,7 @@ offset_right = -686.0
 offset_bottom = 88.0
 grow_horizontal = 2
 bbcode_enabled = true
-text = "Buy a plastic bottle?"
+text = "Buy a plastic bottle"
 structured_text_bidi_override = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect"]
@@ -118,6 +88,11 @@ offset_top = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Bookshelves-empty" type="Sprite2D" parent="."]
+position = Vector2(-19, -34)
+scale = Vector2(1.998, 1.486)
+texture = ExtResource("2_vae23")
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(235, -31)
 scale = Vector2(0.35, 0.35)
@@ -125,34 +100,36 @@ script = ExtResource("2_c0ao5")
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
 z_index = 2
-position = Vector2(-151.429, -77.1429)
+position = Vector2(-222.857, -80)
 priority = 10
 script = ExtResource("3_s7cuo")
 isWrong = false
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(-6.10352e-05, -2.14285)
+position = Vector2(-77.1427, -140)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qvmrr")
 
 [node name="Capture4" type="Sprite2D" parent="Node2D/Area2D"]
 z_index = 1
-position = Vector2(-2.85714, -74.2857)
+position = Vector2(-105.714, -157.143)
 scale = Vector2(1.02521, 0.974712)
 texture = ExtResource("4_1l5tv")
 
 [node name="Area2D2" type="Area2D" parent="Node2D"]
-position = Vector2(-948.571, -68.5714)
+position = Vector2(-871.429, -77.1429)
 script = ExtResource("3_s7cuo")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D2"]
-position = Vector2(21.429, 25.7143)
+position = Vector2(68.571, -161.428)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_byn3y")
 
 [node name="Capture2" type="Sprite2D" parent="Node2D/Area2D2"]
-position = Vector2(28.5715, -131.429)
-scale = Vector2(1.72875, 1.10576)
+position = Vector2(65.7143, -188.571)
+scale = Vector2(1.2026, 1.06697)
 texture = ExtResource("5_ir5jk")
 
 [node name="wrong_answer" type="ColorRect" parent="."]

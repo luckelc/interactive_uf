@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tf8iuc3cdjhf"
-path="res://.godot/imported/3.-NAYAHOSE-Wooden-Kitchen-Utensil-Set-1004510123.jpg-9a3cf3f2d126d3030d4f52b85e2609ef.ctex"
+uid="uid://d1pehusfl1yxo"
+path="res://.godot/imported/Bookshelves-Empty.svg-f8338fdf5fa5b1a0e0b39c9a9fc33039.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/simon_/3.-NAYAHOSE-Wooden-Kitchen-Utensil-Set-1004510123.jpg"
-dest_files=["res://.godot/imported/3.-NAYAHOSE-Wooden-Kitchen-Utensil-Set-1004510123.jpg-9a3cf3f2d126d3030d4f52b85e2609ef.ctex"]
+source_file="res://sprites/simon_/Bookshelves-Empty.svg"
+dest_files=["res://.godot/imported/Bookshelves-Empty.svg-f8338fdf5fa5b1a0e0b39c9a9fc33039.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
